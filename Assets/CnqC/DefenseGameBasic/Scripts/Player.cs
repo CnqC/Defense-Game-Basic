@@ -38,9 +38,7 @@ namespace CnqC.DefenseBasic
             if (IsComponentNull()) return;
             if (Input.GetMouseButtonDown(0) && !m_isAttacked)
             {
-
-                if (m_anim)
-                    m_anim.SetBool(Const.ATTACK_ANIM, true);
+                m_anim.SetBool(Const.ATTACK_ANIM, true);
                 m_isAttacked = true; // ng chơi đã bấm nút tấn công
             }
 
@@ -59,9 +57,7 @@ namespace CnqC.DefenseBasic
         public void ResetAttackAnim()
         {
             if (IsComponentNull()) return;
-
-            if (m_anim)
-                m_anim.SetBool(Const.ATTACK_ANIM, false);
+             m_anim.SetBool(Const.ATTACK_ANIM, false);
         }
 
         public bool IsComponentNull()
@@ -76,7 +72,7 @@ namespace CnqC.DefenseBasic
         private void OnTriggerEnter2D(Collider2D collision)
         {
             if (IsComponentNull()) return;
-            if (collision.CompareTag(Const.ENEMY_WEAPON_TAG) && !m_isDead)
+            if (collision.CompareTag(Const.ENEMY_WEAPON_TAG) && (m_isDead = false))
             {   // ktra con hero chạm phải cái tag tên là Eneny weapon và kèm theo đk là hero chưa chết
                 m_anim.SetTrigger(Const.DEAD_ANIM);
                 m_isDead = true;

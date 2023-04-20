@@ -37,7 +37,10 @@ namespace CnqC.DefenseBasic
             // if (m_rb == null || m_player == null) return; // nếu 2 cái đó rỗng ==> tắt hết câu lệnh ở dưới
 
             if (IsComponentNull()) return; // check trên file trên nếu mà  hàm iscomponent null thì tất cả câu lệnh dưới sẽ null
-            if (Vector2.Distance(m_player.transform.position, transform.position)<= atkDistance){
+
+            float distoPlayer = Vector2.Distance(m_player.transform.position, transform.position);
+
+            if (distoPlayer<= atkDistance){
 
               
                     m_amin.SetBool(Const.ATTACK_ANIM, true);// khi con yêu quái gần player, nó sẽ chuyển sang trạng thái tấn công
@@ -53,6 +56,14 @@ namespace CnqC.DefenseBasic
 
 
             
+        public void Die()
+        {
+            if (IsComponentNull()) return;
 
+            m_amin.SetTrigger(Const.DEAD_ANIM);
+            m_rb.velocity = Vector2.zero; // dừng vận tốc
+
+            gameObject.layer = LayerMask.NameToLayer(Const.DEAD_ANIM);
+        }
     }
 }

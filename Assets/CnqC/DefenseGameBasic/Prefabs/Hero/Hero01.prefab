@@ -11,13 +11,14 @@ GameObject:
   - component: {fileID: 7786495241988079798}
   - component: {fileID: 191298511}
   - component: {fileID: 985485031868419051}
-  m_Layer: 0
+  - component: {fileID: 1785772720}
+  m_Layer: 6
   m_Name: Weapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7786495241988079798
 Transform:
   m_ObjectHideFlags: 0
@@ -26,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2033059506251423072}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.39258742, y: -7.3290544, z: -9.954444}
+  m_LocalPosition: {x: -1.341, y: -1.001, z: -9.954444}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -67,9 +68,21 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.41903806, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.08096194
+--- !u!114 &1785772720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2033059506251423072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3981a03c19360214fbbca0ceed15e03d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3780863429143368359
 GameObject:
   m_ObjectHideFlags: 0
@@ -84,9 +97,9 @@ GameObject:
   - component: {fileID: -299002238840100771}
   - component: {fileID: 503215815}
   - component: {fileID: 1384023922}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Hero01
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -100,7 +113,7 @@ Transform:
   m_GameObject: {fileID: 3780863429143368359}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.24, y: -0.77, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: -1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7786495241988079798}
@@ -239,4 +252,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aeaaa8fe9e34cd241867320e9bc00408, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  atkRate: 1.5
+  atkRate: 1
