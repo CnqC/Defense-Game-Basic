@@ -5,7 +5,7 @@ using UnityEngine;
 namespace CnqC.DefenseBasic
 {
 
-    public class Enemy : MonoBehaviour
+    public class Enemy : MonoBehaviour, IComponnetChecking
     {
         public float speed;
         public float atkDistance;
@@ -13,7 +13,11 @@ namespace CnqC.DefenseBasic
         private Animator m_amin;
         private Rigidbody2D m_rb;
         private Player m_player;
-        
+
+        public bool IsComponentNull()
+        {
+            return m_amin == null || m_player == null || m_rb == null;
+        }
 
         private void Awake()
         {
@@ -30,8 +34,9 @@ namespace CnqC.DefenseBasic
         // Update is called once per frame
         void Update()
         {
-            if (m_rb == null || m_player == null) return; // nếu 2 cái đó rỗng ==> tắt hết câu lệnh ở dưới
+            // if (m_rb == null || m_player == null) return; // nếu 2 cái đó rỗng ==> tắt hết câu lệnh ở dưới
 
+            if (IsComponentNull()) return; // check trên file trên nếu mà  hàm iscomponent null thì tất cả câu lệnh dưới sẽ null
             if (Vector2.Distance(m_player.transform.position, transform.position)<= atkDistance){
 
               
