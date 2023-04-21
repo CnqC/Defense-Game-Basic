@@ -40,13 +40,13 @@ namespace CnqC.DefenseBasic
 
             float distoPlayer = Vector2.Distance(m_player.transform.position, transform.position);
 
-            if (distoPlayer<= atkDistance){
+            if (distoPlayer <= atkDistance){
 
               
-                    m_amin.SetBool(Const.ATTACK_ANIM, true);// khi con yêu quái gần player, nó sẽ chuyển sang trạng thái tấn công
+                m_amin.SetBool(Const.ATTACK_ANIM, true);// khi con yêu quái gần player, nó sẽ chuyển sang trạng thái tấn công
 
                 m_rb.velocity = Vector2.zero; // (0.0) 
-            }
+            }       
             else
             {
          

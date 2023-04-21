@@ -16,7 +16,10 @@ namespace CnqC.DefenseBasic
 
         private bool m_isDead;
 
-
+        public bool IsComponentNull()
+        {
+            return m_anim == null;
+        }
         private void Awake()
         {
             m_anim = GetComponent<Animator>();
@@ -60,10 +63,7 @@ namespace CnqC.DefenseBasic
              m_anim.SetBool(Const.ATTACK_ANIM, false);
         }
 
-        public bool IsComponentNull()
-        {
-            return m_anim == null;
-        }
+       
 
         // chuyển trạng thái của player nếu như mà bị con quái đánh dính ---> chết
 
@@ -72,10 +72,11 @@ namespace CnqC.DefenseBasic
         private void OnTriggerEnter2D(Collider2D collision)
         {
             if (IsComponentNull()) return;
-            if (collision.CompareTag(Const.ENEMY_WEAPON_TAG) && (m_isDead = false))
+            if (collision.CompareTag(Const.ENEMY_WEAPON_TAG) && (m_isDead == false) )
             {   // ktra con hero chạm phải cái tag tên là Eneny weapon và kèm theo đk là hero chưa chết
                 m_anim.SetTrigger(Const.DEAD_ANIM);
                 m_isDead = true;
+                
             }
         }
     }  
