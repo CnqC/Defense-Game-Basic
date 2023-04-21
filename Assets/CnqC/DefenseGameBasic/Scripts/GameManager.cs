@@ -15,6 +15,13 @@ namespace CnqC.DefenseBasic
 
         private bool m_isGameOver; // check xem la game da done hay chua
 
+        private int m_score;
+
+        public int Score { get => m_score; set => m_score = value; }
+
+
+
+
 
         // Start is called before the first frame update
         void Start()

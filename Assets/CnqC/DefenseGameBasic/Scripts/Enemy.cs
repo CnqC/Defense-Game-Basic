@@ -14,6 +14,10 @@ namespace CnqC.DefenseBasic
         private Rigidbody2D m_rb;
         private Player m_player;
 
+        private bool m_isDead; // ktr xem enemy da chet chua
+
+        private GameManager m_gm;
+
         public bool IsComponentNull()
         {
             return m_amin == null || m_player == null || m_rb == null;
@@ -24,11 +28,12 @@ namespace CnqC.DefenseBasic
             m_amin = GetComponent<Animator>();
             m_rb = GetComponent<Rigidbody2D>();
             m_player = FindObjectOfType<Player>();
+            m_gm = FindObjectOfType<GameManager>();
         }
         // Start is called before the first frame update
         void Start()
         {
-
+            
         }
 
         // Update is called once per frame
@@ -58,12 +63,18 @@ namespace CnqC.DefenseBasic
             
         public void Die()
         {
-            if (IsComponentNull()) return;
+            if (IsComponentNull() || m_isDead) return;
 
+            m_isDead = true;
             m_amin.SetTrigger(Const.DEAD_ANIM);
             m_rb.velocity = Vector2.zero; // dừng vận tốc
 
             gameObject.layer = LayerMask.NameToLayer(Const.DEAD_ANIM);
+
+            if (m_gm) // tăng score lên 1
+                m_gm.Score++;
+
+            Destroy(gameObject, 2f); // huy con quái chết trong 2s, biến gameObject là nó nhận dc từ lớp Monobihavior
         }
     }
 }
