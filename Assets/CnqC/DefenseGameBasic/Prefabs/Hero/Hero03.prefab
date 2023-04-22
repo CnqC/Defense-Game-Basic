@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 3064310808051908704}
   - component: {fileID: 7484949158155260786}
   - component: {fileID: 4091318868393248938}
-  m_Layer: 0
+  - component: {fileID: 641171042459879013}
+  m_Layer: 6
   m_Name: Hero03
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -156,6 +157,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.2391331, y: 1.9863255}
   m_EdgeRadius: 0
+--- !u!114 &641171042459879013
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7470002235362798418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aeaaa8fe9e34cd241867320e9bc00408, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  atkRate: 1.5
 --- !u!1 &8693060155171113825
 GameObject:
   m_ObjectHideFlags: 0
@@ -167,7 +181,7 @@ GameObject:
   - component: {fileID: 1904383197616923147}
   - component: {fileID: 5568764320375696366}
   - component: {fileID: 7355932259442822681}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Weapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}

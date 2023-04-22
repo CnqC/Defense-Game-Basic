@@ -76,6 +76,8 @@ namespace CnqC.DefenseBasic
             {   // ktra con hero chạm phải cái tag tên là Eneny weapon và kèm theo đk là hero chưa chết
                 m_anim.SetTrigger(Const.DEAD_ANIM);
                 m_isDead = true;
+
+                // đổi layer khi bị quáy chém vào --> chuyển sang layer dead layer để k chạm dc vào nhân vật khi chết
                 gameObject.layer = LayerMask.NameToLayer(Const.DEAD_LAYER);
                 
             }
