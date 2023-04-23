@@ -4,7 +4,7 @@ using UnityEngine;
 // giữ những định nghĩa cấu trúc trong game
 
 namespace CnqC.DefenseBasic
-{ // để hiện những dữ liệu xuất nằm ở ngoài inspector thì phải bất 1 tiến ích như sau: 
+{ // để hiện những dữ liệu trong 1 class xuất nằm ở ngoài inspector thì phải bất 1 tiến ích như sau: 
     [System.Serializable]
     public class ShopItem
     {
