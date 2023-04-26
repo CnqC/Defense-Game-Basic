@@ -9,6 +9,8 @@ namespace CnqC.DefenseBasic
     {
         public float speed;
         public float atkDistance;
+        public int minCoinBonus;
+        public int maxCoinBonus;
 
         private Animator m_amin;
         private Rigidbody2D m_rb;
@@ -20,7 +22,7 @@ namespace CnqC.DefenseBasic
 
         public bool IsComponentNull()
         {
-            return m_amin == null || m_player == null || m_rb == null;
+            return m_amin == null || m_player == null || m_rb == null || m_gm == null;
         }
 
         private void Awake()
@@ -71,10 +73,18 @@ namespace CnqC.DefenseBasic
 
             gameObject.layer = LayerMask.NameToLayer(Const.DEAD_ANIM);
 
-            if (m_gm) // tăng score lên 1
+           // tăng score lên 1
                 m_gm.Score++;
 
+            // khi quai chet se nhan dc 1 khoang vang ngau nhien
+
+            int coinbonus = Random.Range(minCoinBonus, maxCoinBonus);
+            Pref.coins += coinbonus;
+            Debug.Log(coinbonus);
+
             Destroy(gameObject, 2f); // huy con quái chết trong 2s, biến gameObject là nó nhận dc từ lớp Monobihavior
+
+
         }
     }
 }
