@@ -30,6 +30,7 @@ namespace CnqC.DefenseBasic
         }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         public bool IsComponentNull()
         {
             return guiMng == null;
@@ -37,6 +38,8 @@ namespace CnqC.DefenseBasic
        
         public void GameOver()
 =======
+=======
+>>>>>>> parent of 8e9c6fb (Update GamePlay, UI)
         // Update is called once per frame 
         void Update()
 >>>>>>> parent of 8e9c6fb (Update GamePlay, UI)

@@ -1089,7 +1089,11 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_AnchoredPosition: {x: 804, y: -229}
+=======
+  m_AnchoredPosition: {x: 716, y: -323.5249}
+>>>>>>> parent of 8e9c6fb (Update GamePlay, UI)
 =======
   m_AnchoredPosition: {x: 716, y: -323.5249}
 >>>>>>> parent of 8e9c6fb (Update GamePlay, UI)
