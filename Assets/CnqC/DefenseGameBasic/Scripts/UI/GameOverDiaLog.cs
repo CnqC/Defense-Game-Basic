@@ -2,19 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using CnqC.DefenseBasic;
+using UnityEngine.UI;
+using TMPro;
 
 
-public class GameOverDiaLog : MonoBehaviour
+public class GameOverDiaLog : DiaLog
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public TextMeshProUGUI BestScoreText;
 
-    // Update is called once per frame
-    void Update()
+    public override void Show(bool isShow)
     {
-        
+        base.Show(isShow);
+
+        if (BestScoreText)
+            BestScoreText.text = Pref.bestScore.ToString("0000");
     }
 }

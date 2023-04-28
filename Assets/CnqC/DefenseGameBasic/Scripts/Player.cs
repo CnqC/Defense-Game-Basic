@@ -16,9 +16,11 @@ namespace CnqC.DefenseBasic
 
         private bool m_isDead;
 
+        private GameManager m_gm;
+
         public bool IsComponentNull()
         {
-            return m_anim == null;
+            return m_anim == null || m_gm == null;
         }
         private void Awake()
         {
@@ -26,6 +28,8 @@ namespace CnqC.DefenseBasic
 
 
             m_curAtkRate = atkRate;// lưu lại giá trị của biến atkRate
+
+            m_gm = FindObjectOfType<GameManager>();
         }
 
         // Start is called before the first frame update
@@ -79,7 +83,10 @@ namespace CnqC.DefenseBasic
 
                 // đổi layer khi bị quáy chém vào --> chuyển sang layer dead layer để k chạm dc vào nhân vật khi chết
                 gameObject.layer = LayerMask.NameToLayer(Const.DEAD_LAYER);
-                
+
+                // đưa player về dạng chết 
+
+                m_gm.GameOver();
             }
         }
     }  

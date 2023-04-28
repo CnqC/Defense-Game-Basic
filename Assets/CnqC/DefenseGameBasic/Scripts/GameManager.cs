@@ -53,10 +53,18 @@ namespace CnqC.DefenseBasic
         {
             return guiMng == null;
         }
-        // Update is called once per frame 
-        void Update()
+       
+        public void GameOver()
         {
+            if (m_isGameOver) return; // nếu game kết thúc thì k làm lệnh dưới
+            m_isGameOver = true;
 
+            Pref.bestScore = m_score;
+
+            // hiển thị hộp thoại gameover
+
+            if(guiMng.gameOverDiaLog) // nếu gameOverDiaLog != null thì show cái game over ra
+                guiMng.gameOverDiaLog.Show(true);
         }
 
         IEnumerator SpawmEnemy()

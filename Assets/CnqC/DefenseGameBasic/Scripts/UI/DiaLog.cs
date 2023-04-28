@@ -6,6 +6,7 @@ using CnqC.DefenseBasic;
 
 public class DiaLog : MonoBehaviour
 {
+    [SerializeField]
     public Text titleTxt; 
     public Text contentTxt;
 

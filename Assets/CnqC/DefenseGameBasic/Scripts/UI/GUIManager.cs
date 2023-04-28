@@ -11,8 +11,8 @@ public class GUIManager : MonoBehaviour
     public GameObject homeGUI;
     public GameObject gameGUI;
     public DiaLog gameOverDiaLog;
-    [SerializeField] public TextMeshProUGUI mainCoinTxt;
-    [SerializeField] public TextMeshProUGUI gamePlayCoinTxt;
+    public TextMeshProUGUI mainCoinTxt;
+    public TextMeshProUGUI gamePlayCoinTxt;
 
 
     public void ShowGameGUI(bool isShow)
@@ -33,7 +33,7 @@ public class GUIManager : MonoBehaviour
 
     }
 
-    public void UpdateGamePlayCoins()
+    public void UpdateGamePlayCoins() 
     {
         if (gamePlayCoinTxt)
             gamePlayCoinTxt.text = Pref.coins.ToString();
