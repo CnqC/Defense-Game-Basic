@@ -29,17 +29,15 @@ namespace CnqC.DefenseBasic
             StartCoroutine(SpawmEnemy());
         }
 
-<<<<<<< HEAD
         public bool IsComponentNull()
         {
-            return guiMng == null;
+            // return guiMng == null;
+            return false;
         }
        
-        public void GameOver()
-=======
-        // Update is called once per frame 
+        public void GameOver() { }
+
         void Update()
->>>>>>> parent of 8e9c6fb (Update GamePlay, UI)
         {
             if (m_isGameOver) return; // nếu game kết thúc thì k làm lệnh dưới
             m_isGameOver = true;
@@ -48,8 +46,8 @@ namespace CnqC.DefenseBasic
 
             // hiển thị hộp thoại gameover
 
-            if(guiMng.gameOverDiaLog) // nếu gameOverDiaLog != null thì show cái game over ra
-                guiMng.gameOverDiaLog.Show(true);
+            //if(guiMng.gameOverDiaLog) // nếu gameOverDiaLog != null thì show cái game over ra
+            //    guiMng.gameOverDiaLog.Show(true);
         }
 
         IEnumerator SpawmEnemy()
