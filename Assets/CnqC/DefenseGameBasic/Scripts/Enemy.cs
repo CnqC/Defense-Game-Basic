@@ -80,10 +80,7 @@ namespace CnqC.DefenseBasic
 
             int coinbonus = Random.Range(minCoinBonus, maxCoinBonus);
             Pref.coins += coinbonus;
-
-            // người chơi giết dc quỷ -> cập nhap655 cái coins trên gameplayGUi
-            if (m_gm.guiMng)
-                m_gm.guiMng.UpdateGamePlayCoins();
+            
 
             Destroy(gameObject, 2f); // huy con quái chết trong 2s, biến gameObject là nó nhận dc từ lớp Monobihavior
 

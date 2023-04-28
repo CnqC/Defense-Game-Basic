@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,14 +6,12 @@ using UnityEngine;
 // Tu dong tao ra quai
 namespace CnqC.DefenseBasic
 {
-    public class GameManager : MonoBehaviour,IComponnetChecking
+    public class GameManager : MonoBehaviour
     {
 
         public float spawnTime; // thoi gian tao ra quai
 
         public Enemy[] enemyPrefabs;
-
-        public GUIManager guiMng;
 
         private bool m_isGameOver; // check xem la game da done hay chua
 
@@ -28,33 +26,20 @@ namespace CnqC.DefenseBasic
         // Start is called before the first frame update
         void Start()
         {
-            
-            if (IsComponentNull()) return;
-
-            guiMng.ShowGameGUI(false); // mới vào thì show cái homeGui trước ẩn cái homegUi
-
-            // cập nhập coins nguoi choi đã đạt dc
-
-            guiMng.UpdateMainCoins();
-        }
-
-        public void PlayGame()
-        {
             StartCoroutine(SpawmEnemy());
-            // play game thì hiện cái game GUi
-            guiMng.ShowGameGUI(true);
-
-            // cập nhập số vàng ng chơi đạt dc trên gem gui
-
-            guiMng.UpdateGamePlayCoins();
         }
 
+<<<<<<< HEAD
         public bool IsComponentNull()
         {
             return guiMng == null;
         }
        
         public void GameOver()
+=======
+        // Update is called once per frame 
+        void Update()
+>>>>>>> parent of 8e9c6fb (Update GamePlay, UI)
         {
             if (m_isGameOver) return; // nếu game kết thúc thì k làm lệnh dưới
             m_isGameOver = true;
@@ -85,7 +70,5 @@ namespace CnqC.DefenseBasic
                 yield return new WaitForSeconds(spawnTime);
             }
         }
-
-
     }
 }
