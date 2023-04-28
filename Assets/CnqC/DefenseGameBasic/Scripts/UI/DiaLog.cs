@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using CnqC.DefenseBasic;
 
 public class DiaLog : MonoBehaviour
 {
-    public Text titleTxt;
+    public Text titleTxt; 
     public Text contentTxt;
 
     public virtual void Show(bool isShow)
